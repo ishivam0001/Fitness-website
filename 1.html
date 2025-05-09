@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Loss Workout Generator</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-image: url(s9.jpg);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding:20px;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 40px;
+            width: 50%;
+        }
+        button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        button:disabled {
+            background: gray;
+        }
+        button:hover:enabled {
+            background: #e04e2a;
+            transform: scale(1.05);
+        }
+        #workout {
+            font-size: 22px;
+            margin-top: 25px;
+            font-weight: bold;
+            color: #333;
+        }
+        #workout-image {
+            width: 280px;
+            height: auto;
+            margin-top: 20px;
+            margin-left: 150px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            margin-top: 50px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 14px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Weight Loss Workout Generator</div>
+    <div class="container">
+        <h2>Find Your Perfect Workout</h2>
+        <button id="generate-btn" onclick="generateWorkout()">Generate Workout</button>
+        <p id="workout">Click the button to get a workout!</p>
+        <img id="workout-image" src="" alt="Workout Image" style="display:none;">
+    </div>
+    <div class="footer">© 2025 FitnessAura</div>
+
+    <script>
+        const workouts = [
+            { name: "Burpees - 20 reps", image: "g1.gif" },
+            { name: "Jumping jacks - 3 minutes", image: "g2.gif" },
+            { name: "Jump rope - 3 minutes", image: "g3.gif" },
+            { name: "Jump Squats - 15 reps", image: "g4.gif" },
+            { name: "Box Jump - 30 seconds", image: "g5.gif" }
+        ];
+
+        let remainingWorkouts = [...workouts];
+
+        function generateWorkout() {
+            if (remainingWorkouts.length === 0) {
+                document.getElementById("workout").innerText = "Workout Complete!";
+                document.getElementById("generate-btn").disabled = true;
+                return;
+            }
+
+            const randomIndex = Math.floor(Math.random() * remainingWorkouts.length);
+            const workout = remainingWorkouts.splice(randomIndex, 1)[0];
+
+            document.getElementById("workout").innerText = workout.name;
+            document.getElementById("workout-image").src = workout.image;
+            document.getElementById("workout-image").style.display = "block";
+
+            if (remainingWorkouts.length === 0) {
+                setTimeout(() => {
+                    document.getElementById("workout").innerText = "Workout Complete!";
+                    document.getElementById("generate-btn").disabled = true;
+                }, 3000); // Delay for 3 seconds before showing "Workout Complete!"
+            }
+        }
+    </script>
+</body>
+</html>

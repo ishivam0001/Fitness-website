@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+/* Testimonial Box */
+.testimonial-container {
+    left: 60%;
+    position: relative;
+    max-width: 550px;
+    height: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Quote Mark */
+.quote-mark {
+    font-size: 200px;
+    color: #e91e63;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+}
+
+/* Star Ratings */
+.stars {
+    font-size: 18px;
+    color: #ffcc00;
+    margin: 60px;
+}
+
+/* Review Text */
+#testimonial-text {
+    font-size: 25px;
+    color: #555;
+    margin: 60px 0;
+}
+
+/* Reviewer Info */
+.reviewer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-right: 200px;
+}
+
+.reviewer img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin-right: 10px;
+    
+}
+
+/* Navigation Buttons */
+.nav-btn {
+    position: absolute;
+    top: 70%;
+    background: #ddd;
+    border: none;
+    padding: 9px 2px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    transition: 0.3s;
+    width: 60px;
+}
+
+.nav-btn:hover {
+    background: #ccc;
+}
+
+#prev-btn { right: 300px; }
+#next-btn { left: 350px; }
+
+.rvimg{
+    background-image: url(s7.jpg);
+    background-size: cover;
+    height: 750px;
+    padding: 60px;
+}
+
+
+    </style>
+</head>
+<body>
+    <section class="rvimg">
+        <div class="testimonial-container">
+            <div class="quote-mark">“</div>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p id="testimonial-text">Loading...</p>
+            <div class="reviewer">
+                <img id="reviewer-image" src="" alt="Reviewer">
+                <div>
+                    <h4 id="reviewer-name">Loading...</h4>
+                    <p id="reviewer-location">Loading...</p>
+                </div>
+            </div>
+    
+            <button id="prev-btn" class="nav-btn">&#10094;</button>
+            <button id="next-btn" class="nav-btn">&#10095;</button>
+        </div>
+    
+        <script>
+
+const reviews = [
+    {
+        name: "Rahul",
+        location: "Maharashtra",
+        text: "I've tried dozens of fitness websites, but this one actually keeps me coming back. The personalized workout plans and progress tracker are game-changers. I lost 8 kg in three months.",
+        image: "p.jpg"
+    },
+    {
+        name: "Kunal",
+        location: "Delhi",
+        text: "There guidance helped me for losing weight. Diet plan was amazing and my energy levels were great!",
+        image: "p.jpg"
+    },
+    {
+        name: "Aisha",
+        location: "Punjab",
+        text: "There meal plans are effective and easy to follow. My baby and I are both doing great!",
+        image: "p.jpg"
+    },
+];
+
+let currentIndex = 0;
+
+// Select Elements
+const testimonialText = document.getElementById("testimonial-text");
+const reviewerName = document.getElementById("reviewer-name");
+const reviewerLocation = document.getElementById("reviewer-location");
+const reviewerImage = document.getElementById("reviewer-image");
+
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+
+// Load Review Data
+function loadReview(index) {
+    testimonialText.textContent = reviews[index].text;
+    reviewerName.textContent = reviews[index].name;
+    reviewerLocation.textContent = reviews[index].location;
+    reviewerImage.src = reviews[index].image;
+}
+
+// Load First Review
+loadReview(currentIndex);
+
+// Next Review
+nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % reviews.length;
+    loadReview(currentIndex);
+});
+
+// Previous Review
+prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+    loadReview(currentIndex);
+});
+
+
+        </script>
+    </section>
+
+
+</body>
+</html>

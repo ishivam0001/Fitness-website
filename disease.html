@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Disease Management - FitSync</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    header {
+      background-color: #2C3E50;
+      color: #fff;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #18BC9C;
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url(d1.jpg) no-repeat center center/cover;
+      text-align: center;
+      padding: 90px 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color:white;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color:white;
+    }
+
+
+    .hero button {
+      background-color: #18BC9C;
+      color: white;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 50px;
+    }
+
+    .hero button:hover {
+      background-color: #16A085;
+    }
+
+    .container button a{
+      text-decoration: none;
+      color: white;
+    }
+
+    .content {
+      padding: 40px 0;
+    }
+
+    .info, .steps, .testimonial {
+      margin-bottom: 40px;
+    }
+
+    .info h2, .steps h2, .testimonial h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2C3E50;
+    }
+
+    .info p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .image-gallery {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .image-gallery img {
+      width: 30%;
+      min-width: 250px;
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+
+    .videos {
+      padding: 50px 20px;
+      background-color: #e5e5e5;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .videos h2 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 40px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .video-item {
+      width: 600px;
+      height: 350px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    }
+
+    .video-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      filter: brightness(1.1);
+    }
+
+    .video-item iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .extras {
+      margin-top: 50px;
+      padding: 50px 20px;
+      background-color: #d0f0e4;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .extras h3 {
+      font-size: 2rem;
+      color: #2C3E50;
+      margin-bottom: 20px;
+    }
+
+    .extras p {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    canvas {
+      margin-top: 40px;
+      max-width: 600px;
+    }
+
+    footer {
+      background-color: #2C3E50;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/">Home</a>
+        <a href="./calorie.html">Calorie Calculator</a>
+        <a href="./contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Disease Management</h1>
+      <p>Manage Chronic Conditions with Personalized Care</p>
+      <button><a href="./index.html">Start Your Journey</a></button>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="info">
+        <h2>What is Disease Management?</h2>
+
+        <div style="background-color: #e0f7fa; padding: 20px; margin-bottom: 20px; border-radius: 10px;">
+          <strong>🩺 Definition:</strong><br>
+          Disease Management is a structured approach that helps people with chronic diseases—like diabetes, heart disease, or asthma—manage their condition effectively and lead a better quality of life. It uses technology, lifestyle coaching, and regular check-ins to prevent complications and hospital visits.
+        </div>
+
+        <div style="background-color: #fbe9e7; padding: 20px; margin-bottom: 20px; border-radius: 10px;">
+          <strong>🌡 Why It Matters:</strong><br>
+          Chronic diseases are silent killers. They account for over 70% of global deaths. Poorly managed conditions can cause organ failure, emotional distress, and huge hospital bills. With proper disease management, patients gain control over their health and reduce life-threatening risks.
+        </div>
+
+        <div style="background-color: #f3e5f5; padding: 20px; margin-bottom: 20px; border-radius: 10px;">
+          <strong>⚙ Core Components:</strong><br>
+          <ul>
+            <li><strong>🧠 Education:</strong> Teaching patients about symptoms, medications, and preventive actions.</li>
+            <li><strong>🩺 Monitoring:</strong> Tracking vitals and detecting early signs to avoid complications.</li>
+            <li><strong>💊 Medication Adherence:</strong> Encouraging timely and correct dosage.</li>
+            <li><strong>🧑‍⚕ Healthcare Teamwork:</strong> Coordinating with doctors, specialists, and caregivers.</li>
+            <li><strong>🏃 Lifestyle Support:</strong> Guiding diet, exercise, and stress control with personal plans.</li>
+          </ul>
+        </div>
+
+        <div style="background-color: #fff9c4; padding: 20px; margin-bottom: 20px; border-radius: 10px;">
+          <strong>📱 Role of Technology:</strong><br>
+          - Mobile apps send reminders and track symptoms.<br>
+          - Wearables like fitness bands or glucose monitors alert users in real-time.<br>
+          - AI-powered chatbots offer 24/7 answers and motivation.<br>
+          - Telemedicine makes expert help available from home.<br>
+          - Dashboards show progress and trends clearly.
+        </div>
+
+        <div style="background-color: #dcedc8; padding: 20px; margin-bottom: 20px; border-radius: 10px;">
+          <strong>💡 Why Use Disease Management Programs?</strong><br>
+          ✅ Fewer hospitalizations<br>
+          ✅ Reduced medical costs<br>
+          ✅ Boosted confidence in self-care<br>
+          ✅ Early warning signs are not missed<br>
+          ✅ Family members get guided support<br>
+          ✅ Patients live longer and feel stronger
+        </div>
+      </div>
+
+      <div class="image-gallery">
+        <img src="https://th.bing.com/th/id/OIP.QLCln7xuT8iB4lA2euUCUAHaFj?w=728&h=546&rs=1&pid=ImgDetMain" alt="lifestyle diseases"/>
+        <img src="https://slideplayer.com/slide/4332013/14/images/28/Disease+Management+Workflow.jpg" alt="disease management workflow"/>
+        <img src="https://as1.ftcdn.net/v2/jpg/02/39/87/84/1000_F_239878411_DEsFMrvEeBDAWYo4CiG5LpPHA0ftTdOX.jpg" alt="diabetes management"/>
+        <img src="https://th.bing.com/th/id/OIP.WrbiPlBMZOy42446wnPywQHaD3?rs=1&pid=ImgDetMain" alt="chronic disease"/>
+        <img src="https://i.pinimg.com/originals/85/4b/23/854b238dcbfacf20d56dd33a6ead630d.png" alt="prevention strategy"/>
+      </div>
+    </div>
+  </section>
+
+  <section class="videos">
+    <div class="container">
+      <h2>Informative Videos</h2>
+      <div class="video-container">
+        <div class="video-item">
+          <iframe src="https://www.youtube.com/embed/o9Zx9FPxr9E?si=fYjJPQ_grZu90uiv" title="Video 1"></iframe>
+        </div>
+        <div class="video-item">
+          <iframe src="https://www.youtube.com/embed/w6J3wFNi5B4?si=V4n6fqS7Il3yp9Fk" title="Video 2"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="extras">
+    <h3>Did You Know?</h3>
+    <p>Over 80% of chronic diseases can be prevented with lifestyle changes!</p>
+
+    <h3>Motivational Quote</h3>
+    <p>"Take care of your body. It's the only place you have to live." – Jim Rohn</p>
+
+    <canvas id="diseaseChart"></canvas>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FitSync - Disease Management | All Rights Reserved</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('diseaseChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Diabetes', 'Hypertension', 'Heart Disease', 'Asthma', 'Obesity'],
+        datasets: [{
+          label: 'Prevalence in %',
+          data: [20, 30, 25, 15, 35],
+          backgroundColor: '#18BC9C'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Chronic Disease Prevalence (Sample Data)',
+            font: { size: 20 }
+          },
+          legend: { display: false }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,529 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitKids Tracker - Nutrition for Children</title>
+    <style>
+
+
+.container {
+      width: 100%;
+      text-align: left;
+
+    }
+
+    header {
+      background-color: #2C3E50;
+      color: #fff;
+      padding: 15px 0;
+      height: 50px;
+
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #18BC9C;
+      text-decoration: underline;
+    }
+
+        /* Color Palette from Weight Management Page */
+        :root {
+            --primary: #2C3E50;      /* Dark Blue */
+            --secondary: #18BC9C;    /* Teal */
+            --accent: #18BC9C;       /* Yellow */
+            --light: #ECF0F1;        /* Light Gray */
+            --dark: #333;
+        }
+        
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+            animation: pulse 2s infinite;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            font-size: 20px;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        /* Pie Charts Section */
+        .pie-charts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .pie-chart-container {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 300px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: scaleIn 0.6s ease-out;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .pie-chart-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .pie-chart {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: conic-gradient(
+                var(--primary) 0% 33%,
+                var(--secondary) 33% 66%,
+                var(--accent) 66% 100%
+            );
+            position: relative;
+            overflow: hidden;
+            animation: scaleIn 0.8s ease-out;
+        }
+        
+        .pie-chart::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            background: white;
+            border-radius: 50%;
+            top: 10%;
+            left: 10%;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .food-groups-chart {
+            background: conic-gradient(
+                var(--primary) 0% 20%,
+                var(--secondary) 20% 40%,
+                var(--accent) 40% 70%,
+                #FF5722 70% 85%,
+                #3498DB 85% 100%
+            );
+        }
+        
+        .chart-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px;
+            font-size: 14px;
+            transition: transform 0.3s;
+        }
+        
+        .legend-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+            margin-right: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .legend-item:hover .legend-color {
+            transform: scale(1.2);
+        }
+        
+        .food-groups {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .food-group {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeIn 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .food-group:nth-child(1) { animation-delay: 0.1s; }
+        .food-group:nth-child(2) { animation-delay: 0.2s; }
+        .food-group:nth-child(3) { animation-delay: 0.3s; }
+        .food-group:nth-child(4) { animation-delay: 0.4s; }
+        .food-group:nth-child(5) { animation-delay: 0.5s; }
+        
+        .food-group:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .food-group img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            transition: transform 0.3s, filter 0.3s;
+        }
+        
+        .food-group:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+        
+        .nutrition-tips {
+            background-color: var(--accent);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .tip {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .tip:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: pulse 2s infinite;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+
+        .steps ul {
+      list-style-type: none;
+      padding-left: 0;
+
+    }
+
+    .steps li {
+      background: #18BC9C;
+      color: #fff;
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .steps li:hover {
+      background-color: #16A085;
+    }
+
+
+
+        /* Footer */
+        footer {
+      background-color: #2C3E50;
+      color: white;
+      text-align: center;
+      padding: 0px 0;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <div class="container">
+          <nav>
+            <a href="/">Home</a>
+            <a href="./calorie.html">Calorie Calculator</a>
+            <a href="./contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+    
+
+    
+    <div class="hero">
+        <div class="container">
+            <h1>Healthy Eating for Healthy People</h1>
+            <p>Track nutrition, set goals, and make healthy eating diet!</p>
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <div class="pie-charts">
+            <div class="pie-chart-container">
+                <h3>Food Group Servings</h3>
+                <div class="pie-chart food-groups-chart"></div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--primary);"></div>
+                        <span>Fruits (2)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--secondary);"></div>
+                        <span>Vegetables (3)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--accent);"></div>
+                        <span>Grains (6)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #FF5722;"></div>
+                        <span>Dairy (3)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #3498DB;"></div>
+                        <span>Protein (2)</span>
+                    </div>
+                </div>
+                <p>Recommended daily servings for children</p>
+            </div>
+            
+            <div class="pie-chart-container">
+                <h3>Macronutrient Balance</h3>
+                <div class="pie-chart"></div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--primary);"></div>
+                        <span>Carbs (55%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--secondary);"></div>
+                        <span>Protein (25%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--accent);"></div>
+                        <span>Fats (20%)</span>
+                    </div>
+                </div>
+                <p>Ideal nutrition distribution</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title" style="font-size: 40px;">The Five Food Groups</h2>
+        
+        <div class="food-groups">
+            <div class="food-group">
+                <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fruits">
+                <h3>Fruits</h3>
+                <p>2 servings daily</p>
+                <p>Provide vitamins and fiber</p>
+            </div>
+            
+            <div class="food-group">
+                <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Vegetables">
+                <h3>Vegetables</h3>
+                <p>3 servings daily</p>
+                <p>Packed with nutrients</p>
+            </div>
+            
+            <div class="food-group">
+                <img src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Grains">
+                <h3>Grains</h3>
+                <p>6 servings daily</p>
+                <p>Main source of energy</p>
+            </div>
+            
+            <div class="food-group">
+                <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dairy">
+                <h3>Dairy</h3>
+                <p>3 servings daily</p>
+                <p>Important for bones</p>
+            </div>
+            
+            <div class="food-group">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Protein">
+                <h3>Protein</h3>
+                <p>2 servings daily</p>
+                <p>Builds and repairs</p>
+            </div>
+        </div>
+        
+        <div class="nutrition-tips">
+            <h2 class="section-title" style="font-size: 40px;">Nutrition Tips for kids</h2>
+            
+            <div class="tip">
+                <h3>Make it colorful!</h3>
+                <p>Encourage eating a rainbow of fruits and vegetables to get all the vitamins and minerals.</p>
+            </div>
+            
+            <div class="tip">
+                <h3>Smart snacking</h3>
+                <p>Choose snacks that combine protein and fiber like apple slices with peanut butter.</p>
+            </div>
+            
+            <div class="tip">
+                <h3>Hydration station</h3>
+                <p>Make water the drink of choice and add fruit slices for natural flavor.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="steps">
+        <h2 style="text-align: center;font-size: 40px;">How We Help You Achieve Your Goals</h2>
+        <ul>
+          <li onclick="openPage('weight-loss.html')">✅ Weight Loss Meal Plan</li>
+          <li onclick="openPage('muscle-gain.html')">✅ Muscle Gain Meal Plan</li>
+          <li onclick="openPage('vegetarian.html')">✅ Vegetarian Meal Plan</li>
+          <li onclick="openPage('keto.html')">✅ Keto Meal Plan</li>
+          <li onclick="openPage('balanced.html')">✅ Balanced Meal Plan</li>
+        </ul>
+      </div>
+
+
+      <footer>
+        <div class="container">
+          <p>&copy; 2025 FitnessAura</p>
+        </div>
+      </footer>
+    
+
+
+    <script>
+        // Show loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const loader = document.getElementById('loader');
+            loader.style.display = 'flex';
+            
+            // Simulate loading (remove in production)
+            setTimeout(function() {
+                loader.style.display = 'none';
+            }, 1500);
+        });
+
+
+        
+    function openPage(page) {
+      window.location.href = page;
+    }
+
+    </script>
+</body>
+</html>
+
+
+

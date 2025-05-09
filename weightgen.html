@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Category Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-image: url(s9.jpg);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 40px;
+            width: 90%;
+            max-width: 600px;
+        }
+        select, button {
+            padding: 12px;
+            font-size: 16px;
+            margin-top: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #e04e2a;
+            transform: scale(1.05);
+        }
+        #workout {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        #workout-image {
+            width: 250px;
+            height: auto;
+            margin-top: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .footer {
+            margin-top: 50px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 14px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Weekly Workout Generator</div>
+
+    <div class="container">
+        <h2>Select Workout Category</h2>
+        <select id="category">
+            <option value="lower">Lower Body</option>
+            <option value="upper">Upper Body</option>
+            <option value="cardio">Cardio</option>
+            <option value="core">Core</option>
+        </select>
+        <br>
+        <button onclick="generateWorkout()">Generate Workout</button>
+        <p id="workout">Choose a category and click to get a workout!</p>
+        <img id="workout-image" src="" alt="Workout Image">
+    </div>
+
+    <div class="footer">© 2025 FitnessAura</div>
+
+    <script>
+        const workoutCategories = {
+            lower: [
+                { name: "Jump Squats - 15 reps", image: "g4.gif" },
+                { name: "Box Jump - 2 minute", image: "g5.gif" },
+                { name: "close squats - 20 reps", image: "g8.gif" },
+                { name: "Squats - 20 reps", image: "g11.gif" }
+            ],
+            upper: [
+                { name: "Push-ups - 20 reps", image: "g6.gif" },
+                { name: "Shoulder Taps - 30 seconds", image: "g7.gif" },
+                { name: "Diamond Push-up - 10 reps", image: "g9.gif" },
+                { name: "Knee Elbow Push-up - 10 reps", image: "g10.gif" }
+            ],
+            cardio: [
+                { name: "Burpees - 15 reps", image: "g1.gif" },
+                { name: "Jumping Jacks - 2 minutes", image: "g2.gif" },
+                { name: "Mountain Climbers - 1 minute", image: "cardio3.gif" },
+                { name: "Jumping rope - 3 minutes", image: "g3.gif" }
+
+            ],
+            core: [
+                { name: "Plank - 1 minute", image: "g12.gif" },
+                { name: "Russian Twists - 30 reps", image: "g13.gif" },
+                { name: "Knee Sit-Ups - 25 reps", image: "g14.gif" },
+                { name: "Cat Cow - 1 minute", image: "g15.gif" }
+            ]
+        };
+
+        let usedWorkouts = [];
+
+        function generateWorkout() {
+            const category = document.getElementById("category").value;
+            const workouts = workoutCategories[category].filter(w => !usedWorkouts.includes(w.name));
+
+            if (workouts.length === 0) {
+                document.getElementById("workout").innerText = "Exercise Complete!";
+                document.getElementById("workout-image").style.display = "none";
+                usedWorkouts = [];
+                return;
+            }
+
+            const randomIndex = Math.floor(Math.random() * workouts.length);
+            const workout = workouts[randomIndex];
+            usedWorkouts.push(workout.name);
+
+            document.getElementById("workout").innerText = workout.name;
+            document.getElementById("workout-image").src = workout.image;
+            document.getElementById("workout-image").alt = workout.name;
+            document.getElementById("workout-image").style.display = "block";
+        }
+    </script>
+</body>
+</html>

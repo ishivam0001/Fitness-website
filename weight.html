@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background-color: #2C3E50;
+      color: #fff;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #18BC9C;
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://www.heart.org/en/-/media/AHA/H4GM/Article-Images/Lose-Weight-and-Keep-It-Off.jpg?h=683&iar=0&mw=1910&w=1024&sc_lang=en') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 70px 0;
+      background-position: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      margin-left: 110px;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    .hero button {
+      background-color: #18BC9C;
+      color: white;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .hero a{
+      text-decoration: none;
+      color:black;
+
+    }
+
+    .hero button:hover {
+      background-color: #16A085;
+    }
+
+    /* Main Content */
+    .content {
+      padding: 40px 0;
+    }
+
+    .info, .steps, .testimonial {
+      margin-bottom: 40px;
+    }
+
+    .info h2, .steps h2, .testimonial h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2C3E50;
+    }
+
+    .info p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    /* Image Gallery */
+    .image-gallery {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+
+    .image-gallery img {
+      width: 45%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Steps Section */
+    .steps ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .steps li {
+      background: #18BC9C;
+      color: #fff;
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .steps li:hover {
+      background-color: #16A085;
+    }
+
+    /* Weight Chart Section */
+    .chart {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background: #ECF0F1;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .testimonial p {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2C3E50;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/">Home</a>
+        <a href="./calorie.html">Calorie Calculator</a>
+        <a href="">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1 style="color: aliceblue;">Weight Management</h1>
+      <p style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Achieve Your Fitness Goals with Personalized Plans</p>
+      <button><a href="./weightgen.html">Start Your Journey</a></button>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="info">
+        <h2>What is Weight Management?</h2>
+        <p>Weight management is not just about losing weight but about maintaining a healthy balance of calories consumed and burned. It requires understanding your body's needs, setting realistic goals, and making long-term lifestyle changes.</p>
+        <p>With a focus on balanced nutrition and regular exercise, weight management can help improve overall health, reduce the risk of chronic diseases, and increase energy levels. Our approach is designed to provide sustainable results without fad diets or extreme workouts.</p>
+        <p>
+
+            Weight management is the process of maintaining a healthy weight by balancing the number of calories you consume with the number of calories your body uses. It’s not just about losing weight but about finding a healthy and sustainable balance that works for your individual body. Weight management involves adopting healthy eating habits, staying physically active, and creating a lifestyle that supports long-term well-being.
+            
+            It's essential to recognize that weight management is a gradual process that focuses on the quality of the weight loss or gain rather than the speed. Rather than opting for quick-fix diets or extreme workout regimens, the key is to find a plan that includes balanced nutrition, regular exercise, and proper rest to support both physical and mental health. This holistic approach helps reduce the risk of chronic conditions such as heart disease, diabetes, and high blood pressure, and contributes to increased energy levels and a higher quality of life.
+            
+            Additionally, weight management helps you develop a positive relationship with food, exercise, and your body, ensuring that any changes you make are sustainable and part of an overall healthy lifestyle. Whether you aim to lose weight, gain muscle, or maintain a healthy weight, a personalized weight management plan will provide the tools and support needed to achieve and maintain your goals in a healthy, balanced way.
+            
+            </p>
+      </div>
+
+      <div class="image-gallery">
+        <img src="https://oms-www.transforms.svdcdn.com/production/images/Eatwellplate.jpg?w=810&h=540&q=90&auto=format&fit=crop&dm=1559554206&s=1ba40aec4d7da7e6a1ba863c24bb0bee" alt="Healthy Food" />
+        <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_13/2804151/better-april-2019-workout-calendar.jpg" alt="Exercise Routine" />
+      </div>
+
+      <div class="steps">
+        <h2>How We Help You Achieve Your Goals</h2>
+        <div class="steps-content">
+          <!-- Personalized Meal Plans -->
+          <div class="step-item">
+            <img src="https://thumbs.dreamstime.com/b/man-avatar-apple-health-fitness-tracker-app-diet-wellness-pixel-perfect-editable-stroke-vector-icon-man-avatar-341078637.jpg" alt="Personalized Meal Plans" />
+            <h3>Personalized Meal Plans</h3>
+            <p>Our experts create meal plans that are tailored to your specific nutritional needs and preferences. Whether you're looking to lose weight, gain muscle, or simply maintain a balanced lifestyle, our meal plans will ensure you're fueling your body with the right nutrients at the right time.</p>
+            <p>We take into account any dietary restrictions, your fitness goals, and your personal tastes. You will receive easy-to-follow weekly meal schedules that include delicious, nutrient-packed recipes. No more guessing or stressing over what to eat!</p>
+          </div>
+      
+          <!-- Effective Exercise Routines -->
+          <div class="step-item">
+            <img src="https://static01.nyt.com/images/2024/02/27/well/23Well-fitness-data/23Well-fitness-data-articleLarge.jpg?quality=75&auto=webp&disable=upscale" alt="Effective Exercise Routines" />
+            <h3>Effective Exercise Routines</h3>
+            <p>Our team of fitness professionals designs exercise routines that are tailored to your fitness level and goals. Whether you're just starting out or looking to take your fitness to the next level, we provide routines that will boost your metabolism, increase fat burning, and help you build lean muscle.</p>
+            <p>Our exercise plans include a mix of strength training, cardio, and flexibility exercises. Every workout is designed to maximize results, increase energy, and improve overall health. We offer detailed videos and instructions for each workout, so you can follow along with ease.</p>
+          </div>
+      
+          <!-- Ongoing Support and Guidance -->
+          <div class="step-item">
+            <img src="https://media.istockphoto.com/id/1397734203/vector/couple-fitness-logo-vector.jpg?s=612x612&w=0&k=20&c=o-MflGLdwx7Z5R2ZUyOwggGNCsMabFxCkODsRg4iMY0=" alt="Ongoing Support and Guidance" />
+            <h3>Ongoing Support and Guidance</h3>
+            <p>Achieving your fitness goals isn't a solo journey. We offer continuous support through personalized check-ins, coaching, and motivation to help you stay on track. Our team is available to answer any questions and offer advice whenever you need it, ensuring that you have the confidence to keep going.</p>
+            <p>We understand that setbacks happen. That's why we're here to provide encouragement and adjustments to your plan when needed. With our support, you'll have the guidance you need to stay motivated and committed to your goals.</p>
+          </div>
+        </div>
+      </div>
+      
+      <style>
+        /* General Styles */
+        body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f7f9fb;
+        }
+      
+        /* Steps Section */
+        .steps {
+          padding: 60px 0;
+          background-color: #f7f9fb; /* Light grey background for clean look */
+        }
+      
+        .steps h2 {
+          font-size: 2.8rem;
+          text-align: center;
+          margin-bottom: 50px;
+          color: #2C3E50;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      
+        .steps-content {
+          display: flex;
+          justify-content: space-between;
+          gap: 40px;
+          flex-wrap: wrap;
+          margin-top: 30px;
+        }
+      
+        /* Individual Step Item */
+        .step-item {
+          background-color: #ffffff;
+          border-radius: 10px;
+          padding: 30px;
+          text-align: center;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+          flex: 1;
+          min-width: 280px;
+          max-width: 380px;
+          transition: transform 0.3s ease-in-out;
+        }
+      
+        .step-item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+      
+        .step-item img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          margin-bottom: 20px;
+          max-height: 250px;
+          object-fit: cover;
+        }
+      
+        .step-item h3 {
+          font-size: 2rem;
+          color: #18BC9C;
+          margin-bottom: 15px;
+          font-weight: bold;
+          letter-spacing: 1px;
+        }
+      
+        .step-item p {
+          font-size: 1.1rem;
+          color: #555;
+          line-height: 1.8;
+          margin-bottom: 20px;
+          text-align: justify;
+        }
+      
+        .step-item p:last-child {
+          margin-bottom: 0;
+        }
+      
+        /* Media Queries for smaller screens */
+        @media (max-width: 768px) {
+          .steps-content {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+          }
+      
+          .step-item {
+            max-width: 90%;
+            padding: 20px;
+          }
+      
+          .step-item h3 {
+            font-size: 1.8rem;
+          }
+      
+          .step-item p {
+            font-size: 1rem;
+          }
+        }
+      </style>
+      
+      </body>
+      </html>
+      
+      
+
+      <div class="videos">
+        <h2>Watch These Videos for Tips and Motivation</h2>
+        <div class="video-container">
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/xkzBbMhYIgQ?si=6SM2dnOKN8QggxMn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/HA00ZctGz50?si=Oll8gLBjpWxGNnVk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <style>
+        /* General Styles */
+        body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+        }
+      
+        /* Video Section Styling */
+        .videos {
+          padding: 50px 20px;
+          background-color: #e5e5e5; /* Soft light grey background */
+          text-align: center;
+          border-radius: 10px;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+      
+        .videos h2 {
+          font-size: 2.5rem;
+          color: #333;
+          margin-bottom: 40px;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        }
+      
+        /* Flexbox for video container */
+        .video-container {
+          display: flex;
+          justify-content: center;
+          gap: 40px; /* Increased space between videos */
+          flex-wrap: wrap;
+        }
+      
+        /* Individual video item styles */
+        .video-item {
+          position: relative;
+          width: 600px; /* Increased width for a wider aspect ratio */
+          height: 350px; /* Adjusted height to maintain aspect ratio */
+          overflow: hidden;
+          border-radius: 12px;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+          transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+        }
+      
+        /* Hover effect for video items */
+        .video-item:hover {
+          transform: scale(1.05); /* Slight zoom effect */
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+          filter: brightness(1.1); /* Subtle brightness increase on hover */
+        }
+      
+        /* Responsive iframe for video */
+        .video-item iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+          border-radius: 8px;
+        }
+      
+        /* Make the layout responsive on smaller screens */
+        @media (max-width: 768px) {
+          .video-container {
+            flex-direction: column;
+            gap: 30px; /* Add some space between vertically stacked videos */
+          }
+      
+          .video-item {
+            width: 100%; /* Make videos responsive */
+            height: 300px;
+          }
+      
+          .videos h2 {
+            font-size: 2rem; /* Smaller heading on mobile */
+          }
+        }
+      </style>
+      
+      
+
+
+      <div class="chart">
+        <h2>Track Your Progress</h2>
+        <canvas id="weightChart"></canvas>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 FitnessAura</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('weightChart').getContext('2d');
+    const weightChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+        datasets: [{
+          label: 'Weight (kg)',
+          data: [80, 78, 76, 74, 72, 70],
+          borderColor: 'rgb(75, 192, 192)',
+          borderWidth: 2,
+          fill: false
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
